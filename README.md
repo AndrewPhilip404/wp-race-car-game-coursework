@@ -8,8 +8,8 @@ INTERACTIONS AND GAME RULES
 
 *Every player gets 3 chances/lives.For each building floor that is stacked successfully,the palyer is rewarded with 25 points*
 
-#For each block that is stacked perfectly on the top of another, the player gets 50 points#
+*For each block that is stacked perfectly on the top of another, the player gets 50 points*
 
-*Uninterrupted stacks on top of eachother will earn the player extra 25 points.
+*Uninterrupted stacks on top of eachother will earn the player extra 25 points*
 
 
