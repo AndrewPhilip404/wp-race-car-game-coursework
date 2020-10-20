@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+body 
+{       
+                        
+    background-image: url("./AncientSplendidLacewing-size_restricted.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+}
+.back
+{
+    display: inline-block;
+    opacity: .5; 
+    margin-bottom: 505;
+}
+.back:hover
+{
+    opacity: 1;
+}
+            
+.logo
+{
+    display: inline-block;
+    width: 50%;
+    height: 40%;
+    position: absolute;
+    left: 25%;
+    top: -10%;
+}
+.home
+{
+    display: inline-block; 
+    opacity: .5;
+    position: absolute;
+    right: -8%;
+    top: -12%;
+}
+.home:hover
+{
+    opacity: 1;
+}
+.characters
+{
+    display: inline-block; 
+    position: absolute;
+    right: 25%;
+    top: 56%;
+}
+.characters2
+{
+    display: inline-block; 
+    position: absolute;
+    left: 48%;
+    top: 47%;
+}
+.choose_player
+{
+    display: inline-block; 
+    position: absolute;
+    right: 25%;
+    top: 40%;
+}
+#robot1:hover {
+    width: 33%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+#robot2:hover {
+    width: 33%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+#robot3:hover {
+    width: 43%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+#robot4:hover {
+    width: 53%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+
+
