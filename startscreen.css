@@ -1,0 +1,26 @@
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: 30%;
+}
+.options
+{
+    margin-left: 40%;
+    margin-top:  5%;
+               
+}
+.new_game:hover
+{
+    width: 40%;
+}
+.high_scores
+{
+    margin-top: 1%; 
+}
+.high_scores:hover
+{
+    width: 40%;
+            }
