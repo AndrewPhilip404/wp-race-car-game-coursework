@@ -1,0 +1,43 @@
+.logo
+{
+    display: block;
+    margin-left: 30%;
+    margin-right: auto;
+    width: 50%;
+    height: 40%;
+}
+.options
+{
+    margin-left: 40%;
+    margin-top:  0%;
+               
+}
+.new_game:hover
+{
+    width: 33%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+.high_scores
+{
+    margin-top: -1%; 
+    left: 50%
+}
+.high_scores:hover
+{
+    width: 33%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+.badges {
+    margin-top: 0%;
+    left: 50%;
+  }
+.badges:hover {
+    width: 33%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+}
