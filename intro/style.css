@@ -1,0 +1,72 @@
+body{
+    background-image: url(../pics/background.gif);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+header{
+    text-align: center;
+}
+section{
+    text-align: center;
+    display: list-item;
+}
+.how:hover{
+    border-radius: 50px;
+    cursor: pointer;
+}
+.popup{
+    width: 450px;
+    height: 200px;
+    background-color: rgb(23, 23, 112);
+    border-radius: 4px;
+    margin: 0 auto;
+    display: none;
+    position: relative;
+}
+h2{
+    font-size: xx-large;
+    line-height: 40px;
+    color: blueviolet;
+}
+.options{
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    left: 0;
+}
+#close{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 25px;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+    color: red;
+    border: 2px solid;
+}
+a:first-child{
+    float: none;
+    width: 50%;
+    background-color: purple;
+}
+a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px 210px;
+
+}
+.game:hover{
+    border-radius: 50px;
+    cursor: pointer;
+}
+.scores:hover{
+    border-radius: 50px;
+    cursor: pointer;
+}
