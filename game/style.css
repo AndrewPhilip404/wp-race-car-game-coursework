@@ -8,14 +8,14 @@
     display: none;
 }
 .car{
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 120px;
     position: absolute;
     bottom: 120px;
     background-image: url("../pics/car1.png");
     background-size: cover;
 }
-.GameCanvas{
+.GameArea{
     width: 800px;
     height: 100vh;
     background-color: rgb(29, 26, 26);
@@ -47,18 +47,18 @@
     margin-left: 625px;
 
 }
-.Game{
+.CarGame{
     background-image: url("../pics/AstonishingFairAngwantibo-size_restricted.gif");
     background-size: cover;
 
 }
 .other_cars{
     width: 100px;
-    height: 100px;
+    height: 120px;
     background-image: url("../pics/car5.png");
     background-size: cover;
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
 }
 .game-score {
     align-self: right;
@@ -67,12 +67,13 @@
     position: absolute;
     top: 28%;
     right: 1%;
-
-}
-.score span {
+    text-align: center;
+    padding-top: 23px;
     font-size: 40px;
     background-color: ivory;
-    text-align: right;
+    text-align: center;
+    width: 300px;
+    height: 100px;
 }
 .yourScore{
     width: 40%;
@@ -119,11 +120,11 @@
     border-radius: 40px;
     position: absolute;
     width: 47%;
-    right: 20%;
+    right: 10%;
 }
 .overModal .modal-content {
     width: 47.5%;
-    right: 19%;
+    right: 26%;
 }
 .score-content,
 .overModal .modal-content form {
@@ -139,7 +140,7 @@
     margin: 20px auto;
 }
 .overModal #over{
-    left: 35%;
+    left: 30%;
     position: fixed;
 }
 input.playerName {
@@ -152,7 +153,9 @@ input.playerName {
     text-align: center;
     outline: none;
 }
-
+#gameoverscore{
+    background-color: white;
+}
 .btn {
     min-width: 100px;
     height: 50px;
