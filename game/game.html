@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Game">
+        <div class="game-score">
+            <div class="yourScore"><img src="../pics/your_score.gif" width="60%"></div>
+            <div class="score"><span >Generate score here</span></div>
+        </div>
+        <div class="StartScreen">
+            <p>Start Game by clicking Here<br><br>If you hit another car you will loose</p>
+        </div>
+        <div class="GameCanvas">
+        </div>
+    </div>
+    <div id="overModal" class="overModal">
+        <img id="over" src="../pics/WateryScaryBats-size_restricted.gif" width="40%">
+        <div class="modal-content">
+            <div class="score-content">
+                <img src="../pics/your_score.gif" width="500" height="100" alt="">
+                <div id= "gameoverscore">
+                   
+                </div>
+            </div>
+            <form>
+                <input class="playerName" type="text" placeholder="Enter your name">
+                <input class="btn" type="button" value="OK">
+            </form>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>
