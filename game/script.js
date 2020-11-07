@@ -93,7 +93,12 @@ function isCollide(a,b){
 function endGame(){ //when user loses shows game over div
     player.start=false; 
     $('#overModal').toggle(); 
-    document.getElementById("gameoverscore").innerText=updateScore.innerHTML;
+    document.getElementById("gameoverscore").innerText= Number(updateScore.innerHTML) + 1;
+}
+
+function replay(){
+    startscreen.classList.remove('hide');
+    $('#overModal').toggle('hide'); 
 }
 
 function moveCar(car){
