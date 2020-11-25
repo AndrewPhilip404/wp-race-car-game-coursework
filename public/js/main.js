@@ -18,6 +18,86 @@ socket.emit('joinRoom', { username });
 socket.on('roomUsers', ({ users }) => {
   outputUsers(users);
 });
+startscreen.addEventListener('click',start); // start game when clicked
+let keys={ArrowUp: false, ArrowDown: false, ArrowRight: false, ArrowLeft: false}; // keyboard arrows variables
+
+document.addEventListener('keydown',keyDown);
+document.addEventListener('keyup',keyUp);
+function keyDown(e){ // enable keyDown to let keyboard arrows pressed continuously  
+    e.preventDefault();
+    keys[e.key]=true;
+}
+function keyUp(e){ // disable keyUp
+    e.preventDefault();
+    keys[e.key]=false;
+}
+function gamePlay(){
+
+    let car=document.querySelector('.car'); //get car's class in variable
+    let road=gamearea.getBoundingClientRect(); //get game's sizes
+
+    if(player.start){
+
+        moveLines();
+        moveLines2();
+        moveLines3();
+        moveCar(car);
+        if(keys.ArrowUp && player.y>(road.top+70)){ //condition on car's position
+            player.y-=player.speed; // decrease car's top position
+        }
+        if(keys.ArrowDown && player.y<(road.bottom-70)){
+            player.y+=player.speed;// increase car's top position
+        }
+        if(keys.ArrowLeft && player.x>0){
+            player.x-=player.speed; // decrease car's left position
+        }
+        if(keys.ArrowRight && player.x<(road.width-50)){
+            player.x+=player.speed; // increase car's left position
+        }
+
+        car.style.top=player.y + 'px'; // changing car's css style 
+        car.style.left=player.x + 'px';
+
+        window.requestAnimationFrame(gamePlay); //recursion
+        player.score++; //incrementing score
+        updateScore.innerHTML= player.score; // span showing score
+    }
+    
+}
+function moveLines(){
+    let lines=document.querySelectorAll('.lines');
+    lines.forEach(function(item){ // assign spacings between road white lines
+        if(item.y>=700){
+            item.y-=750;
+        }
+        item.y+=player.speed; // increase lines when speed is increased
+        item.style.top=item.y+'px'; // change lines css style
+
+    })
+}
+function moveLines2(){
+    let lines=document.querySelectorAll('.lines2');
+    lines.forEach(function(item){
+        if(item.y>=700){
+            item.y-=750;
+        }
+        item.y+=player.speed;
+        item.style.top=item.y+'px';
+
+    })
+}
+function moveLines3(){
+    let lines=document.querySelectorAll('.lines3');
+    lines.forEach(function(item){
+        if(item.y>=700){
+            item.y-=750;
+        }
+        item.y+=player.speed;
+        item.style.top=item.y+'px';
+
+    })
+}
+
 
 
 
