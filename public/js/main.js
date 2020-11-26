@@ -2,7 +2,9 @@ const startscreen=document.querySelector('.StartScreen'); // constant for starti
 const gamearea=document.querySelector('.GameArea'); // constant to add cars and street to the game
 let player={ speed:5,score:0}; // initial user's speed and score 
 let updateScore = document.querySelector(".score span");  // constant to store and return user's score
+let updateHighScore = document.querySelector(".highscore span");  // constant to store and return user's high score
 const userList = document.getElementById('users');
+let highest=0; // high score
 
 // Get username and room from URL
 const { username } = Qs.parse(location.search, {
@@ -60,6 +62,11 @@ function gamePlay(){
 
         window.requestAnimationFrame(gamePlay); //recursion
         player.score++; //incrementing score
+        if(player.score>=highest) // Update high score span 
+            {
+                highest=player.score;
+                updateHighScore.innerHTML = highest;
+            }
         updateScore.innerHTML= player.score; // span showing score
     }
     

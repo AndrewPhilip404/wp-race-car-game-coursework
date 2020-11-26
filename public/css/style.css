@@ -211,13 +211,30 @@ a{
     width: 300px; 
     height: 100px; 
 } 
+.highscore{ 
+    position: absolute; 
+    top: 63%; 
+    right: 1%; 
+    text-align: center; 
+    padding-top: 23px; 
+    font-size: 40px; 
+    background-color: ivory; 
+    text-align: center; 
+    width: 300px; 
+    height: 100px; 
+}
 .yourScore{ 
     width: 40%; 
     position: absolute; 
     bottom: 73%; 
     left: 76%; 
 } 
- 
+.highScore{ 
+    width: 40%; 
+    position: absolute; 
+    bottom: 40%; 
+    left: 76%; 
+}  
 .StartScreen{ 
     position: absolute; 
     background-color: rgba(10, 8, 119, 0.952); 
