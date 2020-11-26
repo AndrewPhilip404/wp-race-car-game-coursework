@@ -98,9 +98,7 @@ function moveLines3(){
     })
 }
 
-
-
-
+// function for when player is colliding to an other car by their dimensions
 function isCollide(a,b){
     a = a.getBoundingClientRect();
     b = b.getBoundingClientRect();
@@ -115,7 +113,7 @@ function endGame(){ //when user loses shows game over div
     $('#overModal').toggle(); 
     document.getElementById("gameoverscore").innerText= Number(updateScore.innerHTML) + 1;
 }
-
+// starts screen would show when 'replay' is clicked
 function replay(){
     startscreen.classList.remove('hide');
     $('#overModal').toggle('hide'); 
@@ -129,7 +127,7 @@ function moveCar(car){
             endGame();
         }
         if(item.y>=750){ // randomly put other cars in game
-            item.y=-300;
+            item.y=-400;
             item.style.left=Math.floor(Math.random()*350) + 'px';
         }
         item.y+=player.speed; //increase other cars when speed is increased 

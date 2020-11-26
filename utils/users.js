@@ -1,6 +1,6 @@
 const users = [];
 
-// Join user to chat
+// Join user to users list
 function userJoin(id, username) {
   const user = { id, username };
 
@@ -10,7 +10,7 @@ function userJoin(id, username) {
 }
 
 
-// User leaves chat
+// User leaves game
 function userLeave(id) {
   const index = users.findIndex(user => user.id === id);
 

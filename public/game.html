@@ -3,11 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Neon Car Game</title>
   </head>
@@ -31,7 +26,7 @@
   <div class="GameArea">
   </div>
 </div>
-<!--Pop up after user lost for score and user's name-->
+<!--Pop up after user lost to display player's score and choices to exit or play again-->
 <div id="overModal" class="overModal">
   <img id="over" src="pics/WateryScaryBats-size_restricted.gif" width="40%">
   <div class="modal-content">
@@ -46,13 +41,12 @@
       </form>
   </div>
 </div>
+    <!--usage of ajax to link users names to game html-->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
-      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
-      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js" 
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script> <!--game link to socket.io-->
     <script src="js/main.js"></script>
   </body>
 </html>
