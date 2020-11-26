@@ -1,0 +1,120 @@
+const startscreen=document.querySelector('.StartScreen'); // constant for starting game
+const gamearea=document.querySelector('.GameArea'); // constant to add cars and street to the game
+let player={ speed:5,score:0}; // initial user's speed and score 
+let updateScore = document.querySelector(".score span");  // constant to store and return user's score
+const userList = document.getElementById('users');
+
+// Get username and room from URL
+const { username } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true
+});
+
+const socket = io();
+
+// Join room
+socket.emit('joinRoom', { username });
+
+// Get room and users
+socket.on('roomUsers', ({ users }) => {
+  outputUsers(users);
+});
+
+
+
+function isCollide(a,b){
+    a = a.getBoundingClientRect();
+    b = b.getBoundingClientRect();
+    if (a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
+        a.y + a.height > b.y) 
+    return true;
+}
+function endGame(){ //when user loses shows game over div
+    player.start=false; 
+    $('#overModal').toggle(); 
+    document.getElementById("gameoverscore").innerText= Number(updateScore.innerHTML) + 1;
+}
+
+function replay(){
+    startscreen.classList.remove('hide');
+    $('#overModal').toggle('hide'); 
+}
+
+function moveCar(car){
+    let other_cars=document.querySelectorAll('.other_cars'); 
+    other_cars.forEach(function(item){ 
+        if(isCollide(car,item)){ //if car collides with other car game is ended
+            console.log('Game Over');
+            endGame();
+        }
+        if(item.y>=750){ // randomly put other cars in game
+            item.y=-300;
+            item.style.left=Math.floor(Math.random()*350) + 'px';
+        }
+        item.y+=player.speed; //increase other cars when speed is increased 
+        item.style.top=item.y+'px';
+
+    })
+}
+
+function start(){
+    startscreen.classList.add('hide'); // when game starts label hides
+    gamearea.innerHTML="";
+    player.start=true;
+    player.score=0;
+    window.requestAnimationFrame(gamePlay);
+
+    
+
+   for(x=0;x<5;x++){ // printing street's lines
+        let roadline=document.createElement('div');
+        roadline.setAttribute('class','lines');
+        roadline.y=(x*150);
+        roadline.style.top=roadline.y+'px';
+        gamearea.appendChild(roadline);
+    }
+
+    for(x=0;x<5;x++){
+        let roadline=document.createElement('div');
+        roadline.setAttribute('class','lines2');
+        roadline.y=(x*150);
+        roadline.style.top=roadline.y+'px';
+        gamearea.appendChild(roadline);
+    }
+
+    for(x=0;x<5;x++){
+        let roadline=document.createElement('div');
+        roadline.setAttribute('class','lines3');
+        roadline.y=(x*150);
+        roadline.style.top=roadline.y+'px';
+        gamearea.appendChild(roadline);
+    }
+    
+    let car=document.createElement('div');
+    car.setAttribute('class','car');
+    gamearea.appendChild(car);// returns car to the game
+    player.x=car.offsetLeft; // getting the car's left style position
+    player.y=car.offsetTop; // getting the car's top style position
+
+    for(x=0;x<9;x++){ // returning random other cars to the game
+        let othercar=document.createElement('div');
+        othercar.setAttribute('class','other_cars');
+        othercar.y=((x+1)*700)* -1;
+        othercar.style.top=othercar.y+'px';
+        othercar.style.left=Math.floor(Math.random()*700) + 'px';
+        gamearea.appendChild(othercar);
+    }
+
+
+}
+
+// Add users to DOM
+function outputUsers(users) {
+  userList.innerHTML = '';
+  users.forEach(user=>{
+    const li = document.createElement('li');
+    li.innerText = user.username;
+    userList.appendChild(li);
+  });
+ }
