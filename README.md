@@ -22,8 +22,8 @@ https://youtu.be/dhtuh7G4Two
 - Move you car by using the four arrow keys in your keyboard
                    
 				   ^
-			<	_  |  _  >
-                   |
+			     <	_  |  _  >
+                                   |
 				   v
  - If you hit the blue cars, you will lose.
  - Enjoy!
